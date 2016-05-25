@@ -1,0 +1,42 @@
+{
+  "name": "koa2-boilerplate",
+  "version": "0.0.1",
+  "description": "koa2 boilerplate",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "node app/index.js",
+    "build": "rm -rf app && BABEL_ENV=production babel --out-dir=app src",
+    "test": "nyc mocha --compilers js:babel-register --no-timeouts",
+    "report": "nyc report --reporter=html",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-band/node-web-boilerplates.git"
+  },
+  "keywords": [
+    "koa2",
+    "boilerplate",
+    "nodejs",
+    "web"
+  ],
+  "author": "d-band",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d-band/node-web-boilerplates/issues"
+  },
+  "homepage": "https://github.com/d-band/node-web-boilerplates#readme",
+  "dependencies": {
+    "koa": "~2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "~6.9.0",
+    "babel-preset-es2015-node4": "~2.1.0",
+    "babel-preset-stage-3": "~6.5.0",
+    "babel-register": "~6.9.0",
+    "chai": "~3.5.0",
+    "coveralls": "~2.11.9",
+    "mocha": "~2.5.2",
+    "nyc": "~6.4.3"
+  }
+}
