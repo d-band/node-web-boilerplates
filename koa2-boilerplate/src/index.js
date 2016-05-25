@@ -28,4 +28,9 @@ app.use(ctx => {
   ctx.body = 'Hello World';
 });
 
-app.listen(3000);
+if (!module.parent) {
+  app.listen(3000);
+  console.log('Running site at: http://127.0.0.1:3000');
+}
+
+export default app;
