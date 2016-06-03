@@ -13,13 +13,24 @@ describe('Test: index.js', () => {
     request = chai.request.agent(app.listen());
   });
 
-  it('should / return hello world', (done) => {
+  it('should / return home page', (done) => {
     request
       .get('/')
       .end(function(err, res) {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
-        expect(res.text).to.match(/Hello World/);
+        expect(res.text).to.match(/home page/);
+        done();
+      });
+  });
+
+  it('should /hello return hello page', (done) => {
+    request
+      .get('/hello')
+      .end(function(err, res) {
+        expect(err).to.be.null;
+        expect(res).to.have.status(200);
+        expect(res.text).to.match(/hello page/);
         done();
       });
   });

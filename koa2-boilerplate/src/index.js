@@ -1,32 +1,29 @@
 'use strict';
 
+import co from 'co';
+import { join } from 'path';
+
 import Koa from 'koa';
+import logger from 'koa-logger';
+import view from 'koa-view';
+import convert from 'koa-convert';
+
+import routes from './routes';
 
 const app = new Koa();
 
-// x-response-time
-
-app.use(async function (ctx, next) {
-  const start = new Date();
-  await next();
-  const ms = new Date() - start;
-  ctx.set('X-Response-Time', `${ms}ms`);
-});
-
 // logger
+app.use(logger());
 
-app.use(async function (ctx, next) {
-  const start = new Date();
+// view
+app.use(convert(view(join(__dirname, '../views'))));
+app.use(async (ctx, next) => {
+  ctx.render = co.wrap(ctx.render);
   await next();
-  const ms = new Date() - start;
-  console.log(`${ctx.method} ${ctx.url} - ${ms}`);
 });
 
-// response
-
-app.use(ctx => {
-  ctx.body = 'Hello World';
-});
+// routes
+routes(app);
 
 if (!module.parent) {
   app.listen(3000);
