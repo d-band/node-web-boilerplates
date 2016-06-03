@@ -9,15 +9,15 @@ Koa2 boilerplate
 ## Install & Dev
 
 ```
-npm i
-npm run build
-npm start
+$ npm i
+$ npm run build
+$ npm start
 
-open http://localhost:3000
+$ open http://localhost:3000
 ```
 
 ## Test
 
 ```
-npm test
+$ npm test
 ```
