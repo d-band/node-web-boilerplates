@@ -35,6 +35,7 @@
     "koa": "~1.2.1",
     "koa-bodyparser": "~2.2.0",
     "koa-logger": "~1.3.0",
+    "koa-orm": "^1.0.1",
     "koa-router": "~5.4.0",
     "koa-view": "~0.0.3"
   },
