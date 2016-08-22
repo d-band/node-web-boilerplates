@@ -10,5 +10,5 @@ rules:
   space-before-function-paren: [2, never]
   yoda: 0
   arrow-spacing: 2
-  dot-location: [2, "property"]
+  dot-location: [2, property]
   prefer-arrow-callback: 2
