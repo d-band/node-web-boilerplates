@@ -35,14 +35,13 @@
     "koa": "~1.2.1",
     "koa-bodyparser": "~2.2.0",
     "koa-logger": "~1.3.0",
-    "koa-orm": "^1.0.1",
+    "koa-orm": "~1.0.1",
     "koa-router": "~5.4.0",
     "koa-view": "~0.0.3"
   },
   "devDependencies": {
     "babel-cli": "~6.11.4",
     "babel-eslint": "~6.1.2",
-    "babel-plugin-transform-async-to-generator": "~6.8.0",
     "babel-preset-es2015-node": "~6.1.0",
     "babel-register": "~6.11.6",
     "chai": "~3.5.0",
